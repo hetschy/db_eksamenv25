@@ -1,0 +1,52 @@
+
+
+\documentclass[12pt, a4paper]{article}
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{enumitem}
+
+\title{Eksamen - Databasesystemer våren 2025}
+\author{Marius Aasgaard, Stian Hetsch}
+
+\begin{document}
+
+\maketitle
+
+\section{Normalisering}
+
+Vi starter med følgende attributter:
+
+SmøringID, Navn, Type, SmøreKategori, TempIntervall, Snøtype, BrukerNivå, Løypeforhold
+
+\subsection{1NF}
+
+Sørger for å kun ha atomære verdier, altså én verdi pr. attributt:
+
+SmøringID, Navn, Type, SmøreKategori, TempMin, TempMax, SnøtyperFukt, SnøtyperTempMin, SnøtyperTempMax, BrukerNivå, LøypeforholdFukt, LøypeforholdTemperatur, LøypeforholdDistanse 
+
+\subsection{2NF}
+
+Smøring --> (SmøringID), Navn, SmøringType*, TempMin, TempMax, BrukerNivå*, Snøtype*
+SmøringType -> (TypeID), Navn, Snøtype*
+Snøtype -> (SnøtypeID), Type, Fukt, TempMin, TempMax
+Løypeforhold -> (LøypeID), LøypeforholdDistanse*
+BrukerNivå -> (BrukerNivåID), Nivå*
+
+\subsection{3NF}
+
+
+
+\subsection{BCNF}
+
+\section{ER-modellering}
+
+\section{Database implementasjon}
+
+\section{Dummy data}
+
+\section{SQL-spørringer}
+
+% section  (end)
+\end{document}
+
